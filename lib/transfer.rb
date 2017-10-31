@@ -16,16 +16,16 @@ class Transfer
 
   def execute_transaction
     if self.valid? && self.status == "pending"
-      self.sender -= amount
-      self.receiver += amount
+      self.sender -= self.amount
+      self.receiver += self.amount
       self.status = "completed"
     end
   end
 
   def reverse_transaction
     if self.valid? && self.status == "complete"
-      self.sender += amount
-      self.receiver -= amount
+      self.sender += self.amount
+      self.receiver -= self.amount
       self.status = "reversed"
     end
   end
