@@ -16,8 +16,8 @@ class Transfer
 
   def execute_transaction
     if self.valid? && self.status == "pending"
-      self.sender -= self.amount
-      self.receiver += self.amount
+      self.sender.deposit(-self.amount)
+      self.receiver.deposit(self.amount)
       self.status = "completed"
     end
   end
