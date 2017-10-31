@@ -7,7 +7,7 @@ class BankAccount
     @balance = 1000
   end
   def deposit(amount)
-    self.status += amount
+    self.balance += amount
   end
   def display_balance
     "Your balance is $#{self.balance}."
