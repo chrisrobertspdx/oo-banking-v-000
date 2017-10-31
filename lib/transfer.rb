@@ -21,12 +21,12 @@ class Transfer
       self.status = "completed"
     end
   end
-  
+
   def reverse_transaction
     if self.valid? && self.status == "complete"
       self.sender += amount
       self.receiver -= amount
       self.status = "reversed"
-    e
+    end
   end
 end
